@@ -1,70 +1,235 @@
-body{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
-    background-color: yellow;
+body {
+    background: linear-gradient(135deg, #009739, #25b94d, #f4f4f4);
+    color: #222;
 }
 
-header nav{
+header {
+    background: yellow;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-header nav a{
+header nav a {
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 20px;
     width: 200px;
+    text-align: center;
     color: black;
     font-family: cursive;
-    position: relative;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-header nav a:active{
-    top: 2px;
-    left: 2px;
+header nav a:hover {
+    background: rgba(0,0,0,0.1);
+    transform: translateY(-2px);
 }
 
-h1.Introducao{
-    width: 100%;
+h1.Introducao,
+h1.curiosidades {
+    background: linear-gradient(to right, #009739, #00852f);
+    color: white;
     text-align: center;
+    padding: 25px;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 15px;
+    font-size: 42px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    text-shadow: 2px 2px 5px black;
+    transition: 0.4s;
 }
 
-p.Introducao{
-    text-align: left;
-    margin-left: 30px;
-    margin-top: 80px;
+h1.Introducao:hover,
+h1.curiosidades:hover {
+    letter-spacing: 3px;
+}
+
+/* INTRODUÇÃO */
+
+.container-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 30px auto;
+    width: 90%;
+}
+
+#Escudo {
+    width: 250px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    transition: 0.4s;
+}
+
+#Escudo:hover {
+    transform: scale(1.05);
+}
+
+p.Introducao {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 15px;
     font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
-#Escudo{
-    float: right;
-    margin-right: 100px;
-    width: 400px;
+/* GRANDES ÍDOLOS */
+
+h2.idolos {
+    text-align: center;
+    color: yellow;
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px black;
 }
 
-h2.Selecao-atual{
+.galeria-idolos {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.card-idolo {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    transition: .4s;
+}
+
+.card-idolo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.35);
+}
+
+.card-idolo img {
     width: 100%;
-    margin-top: 200px;
-    text-align: center;
+    height: 250px;
+    object-fit: contain;
+    background: white;
+    border-radius: 20px;
 }
 
-h1.curiosidades{
+.card-idolo h3 {
+    margin-top: 15px;
     text-align: center;
+    color: #002776;
+    font-size: 24px;
 }
 
-h2.Copa-2014{
+.card-idolo p {
+    margin-top: 10px;
     text-align: center;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
-img.Copa-2014{
-    float: left;
-    margin-left: 40px;
-    margin-bottom: 100px;
+/* CURIOSIDADES */
+
+ol.curiosidades {
+    width: 80%;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 25px 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 1.8;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+h2.Copa-2014 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 32px;
+    color: yellow;
+    text-shadow: 2px 2px 5px black;
+}
+
+img.Copa-2014 {
+    display: block;
+    margin: 20px auto;
     width: 300px;
     border-radius: 80%;
-    border: solid 5px green;
-    margin-right: 30px;
+    border: 5px solid green;
+    transition: 0.4s;
 }
 
+img.Copa-2014:hover {
+    transform: scale(1.05);
+}
+
+p.Copa-2014 {
+    width: 80%;
+    margin: 20px auto 50px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+    .galeria-idolos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header nav a {
+        width: 100%;
+    }
+
+    h1.Introducao,
+    h1.curiosidades {
+        width: 90%;
+        font-size: 28px;
+    }
+
+    #Escudo {
+        width: 180px;
+    }
+
+    ol.curiosidades,
+    p.Introducao,
+    p.Copa-2014 {
+        width: 90%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .galeria-idolos {
+        grid-template-columns: 1fr;
+    }
+}

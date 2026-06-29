@@ -10,6 +10,7 @@ body {
     color: #222;
 }
 
+/* HEADER */
 header {
     background: yellow;
     padding: 10px 0;
@@ -39,8 +40,8 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-h1.Introducao,
-h1.curiosidades {
+/* TITULO PRINCIPAL */
+h1.Introducao {
     background: linear-gradient(to right, #009739, #00852f);
     color: white;
     text-align: center;
@@ -51,16 +52,9 @@ h1.curiosidades {
     font-size: 42px;
     box-shadow: 0 8px 20px rgba(0,0,0,.35);
     text-shadow: 2px 2px 5px black;
-    transition: 0.4s;
 }
 
-h1.Introducao:hover,
-h1.curiosidades:hover {
-    letter-spacing: 3px;
-}
-
-/* INTRODUÇÃO */
-
+/* INTRO */
 .container-intro {
     display: flex;
     align-items: center;
@@ -96,9 +90,9 @@ p.Introducao {
     box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
-/* GRANDES ÍDOLOS */
+/* ===== CONQUISTAS ===== */
 
-h2.idolos {
+h2.conquistas-titulo {
     text-align: center;
     color: yellow;
     font-size: 40px;
@@ -107,7 +101,7 @@ h2.idolos {
     text-shadow: 2px 2px 5px black;
 }
 
-.galeria-idolos {
+.galeria-conquistas {
     width: 90%;
     margin: auto;
     display: grid;
@@ -116,102 +110,56 @@ h2.idolos {
     margin-bottom: 60px;
 }
 
-.card-idolo {
+.card-conquista {
     background: white;
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,.25);
     transition: .4s;
+    text-align: center;
 }
 
-.card-idolo:hover {
+.card-conquista:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,.35);
 }
 
-.card-idolo img {
+.card-conquista img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: contain;
     background: white;
     border-radius: 20px;
 }
 
-.card-idolo h3 {
+.card-conquista h3 {
     margin-top: 15px;
-    text-align: center;
     color: #002776;
-    font-size: 24px;
+    font-size: 22px;
 }
 
-.card-idolo p {
+.card-conquista p {
     margin-top: 10px;
-    text-align: center;
-    line-height: 1.5;
     font-size: 16px;
+    line-height: 1.5;
 }
-
-/* CURIOSIDADES */
-
-ol.curiosidades {
-    width: 80%;
-    margin: 30px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 25px 40px;
-    border-radius: 15px;
-    font-size: 20px;
-    line-height: 1.8;
-    box-shadow: 0 8px 20px rgba(0,0,0,.2);
-}
-
-h2.Copa-2014 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 32px;
-    color: yellow;
-    text-shadow: 2px 2px 5px black;
-}
-
-img.Copa-2014 {
-    display: block;
-    margin: 20px auto;
-    width: 300px;
-    border-radius: 80%;
-    border: 5px solid green;
-    transition: 0.4s;
-}
-
-img.Copa-2014:hover {
-    transform: scale(1.05);
-}
-
-p.Copa-2014 {
-    width: 80%;
-    margin: 20px auto 50px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 25px;
-    border-radius: 15px;
-    font-size: 18px;
-    line-height: 1.8;
-    text-align: justify;
-    box-shadow: 0 8px 20px rgba(0,0,0,.2);
-}
-
-/* RESPONSIVO */
 
 @media (max-width: 900px) {
-    .galeria-idolos {
+    .galeria-conquistas {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+    .galeria-conquistas {
+        grid-template-columns: 1fr;
+    }
+
     header nav a {
         width: 100%;
     }
 
-    h1.Introducao,
-    h1.curiosidades {
+    h1.Introducao {
         width: 90%;
         font-size: 28px;
     }
@@ -220,16 +168,8 @@ p.Copa-2014 {
         width: 180px;
     }
 
-    ol.curiosidades,
-    p.Introducao,
-    p.Copa-2014 {
+    p.Introducao {
         width: 90%;
         font-size: 18px;
-    }
-}
-
-@media (max-width: 500px) {
-    .galeria-idolos {
-        grid-template-columns: 1fr;
     }
 }

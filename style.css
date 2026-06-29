@@ -11,19 +11,23 @@ body{
     animation: aparecer 1s ease;
 }
 
+/* ---------- CONTAINER ---------- */
 .container{
     width: 90%;
     max-width: 1200px;
     margin: 30px auto;
 }
 
+/* ---------- HEADER ---------- */
 header{
     background-color: yellow;
+    padding: 10px 0;
 }
 
 header nav{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 header nav a{
@@ -33,6 +37,7 @@ header nav a{
     color: black;
     font-family: cursive;
     position: relative;
+    text-align: center;
 }
 
 header nav a:active{
@@ -91,7 +96,7 @@ td{
     font-size: 22px;
 }
 
-/* ---------- IMAGENS DAS TAÇAS ---------- */
+/* ---------- IMAGENS ---------- */
 
 table img{
     width: 240px;
@@ -114,6 +119,7 @@ table img:hover{
     align-items: center;
     gap: 50px;
     margin-bottom: 70px;
+    flex-wrap: wrap;
 }
 
 .texto{
@@ -138,8 +144,7 @@ table img:hover{
     text-shadow: 2px 2px 6px rgba(0,0,0,.8);
 }
 
-
-/* ---------- FOTO DA SELEÇÃO ---------- */
+/* ---------- FOTO SELEÇÃO ---------- */
 
 .img-selecao{
     width: 420px;
@@ -172,7 +177,9 @@ table img:hover{
     gap: 30px;
 }
 
+/* CARD CORRIGIDO */
 .card{
+    position: relative;
     background: white;
     border-radius: 15px;
     padding: 15px;
@@ -180,22 +187,7 @@ table img:hover{
     transition: .4s;
     opacity: 0;
     animation: subir .8s forwards;
-}
-
-.card:nth-child(1){
-    animation-delay: .2s;
-}
-
-.card:nth-child(2){
-    animation-delay: .5s;
-}
-
-.card:nth-child(3){
-    animation-delay: .8s;
-}
-
-.card:nth-child(4){
-    animation-delay: 1.1s;
+    overflow: hidden;
 }
 
 .card:hover{
@@ -223,6 +215,35 @@ table img:hover{
     font-weight: bold;
 }
 
+/* INFO EXPAND */
+.info{
+    max-height: 0;
+    overflow: hidden;
+    transition: .5s;
+    color: white;
+    background: #002776;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+.info h3{
+    color: #FFD700;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.info p{
+    margin: 10px 0;
+    color: white;
+    font-size: 16px;
+}
+
+.card:hover .info{
+    max-height: 220px;
+    padding: 15px;
+}
+
 /* ---------- RODAPÉ ---------- */
 
 footer{
@@ -234,15 +255,37 @@ footer{
     font-size: 20px;
 }
 
+/* ---------- RESPONSIVO ---------- */
+
+@media (max-width: 900px){
+    .galeria{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .texto{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    .galeria{
+        grid-template-columns: 1fr;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
+    header nav a{
+        width: 100%;
+    }
+}
+
 /* ---------- ANIMAÇÕES ---------- */
 
 @keyframes aparecer{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
+    from{ opacity:0; }
+    to{ opacity:1; }
 }
 
 @keyframes titulo{

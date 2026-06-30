@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#009739,#25b94d,#f4f4f4);
+    color: #222;
+    animation: aparecer 1s ease;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    background-color: yellow;
+    padding: 10px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+header nav a{
+    text-decoration: none;
+    padding: 12px 20px;
+    width: 200px;
+    color: black;
+    font-family: cursive;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+header nav a:hover{
+    background: #009739;
+    color: white;
+}
+
+header nav a:active{
+    top: 2px;
+    left: 2px;
+}
+
+/* ---------- TÍTULO ---------- */
+
+h1{
+    background: linear-gradient(to right,#009739,#00852f);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    font-size: 48px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    text-shadow: 2px 2px 5px black;
+    animation: titulo 1s ease;
+    transition: .4s;
+}
+
+h1:hover{
+    letter-spacing: 3px;
+}
+
+/* ---------- AUTORES ---------- */
+
+.autores{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.autores .card{
+    background: linear-gradient(135deg,#ffffff,#f4f4f4);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    transition: .4s;
+    animation: subir .8s forwards;
+    opacity: 0;
+}
+
+.autores .card:nth-child(1){
+    animation-delay: .2s;
+}
+
+.autores .card:nth-child(2){
+    animation-delay: .5s;
+}
+
+.autores .card:nth-child(3){
+    animation-delay: .8s;
+}
+
+.autores .card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,.4);
+}
+
+.autores .card h2{
+    color: #009739;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+.autores .card p{
+    font-size: 19px;
+    line-height: 1.8;
+    color: #222;
+    margin: 12px 0;
+    text-align: left;
+}
+
+.autores .card strong{
+    color: #002776;
+}
+
+/* ---------- REFERÊNCIAS ---------- */
+
+.referencias{
+    background: linear-gradient(135deg,#ffffff,#f4f4f4);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    margin-bottom: 60px;
+    animation: subir 1s ease;
+}
+
+.referencias h2{
+    color: #009739;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+.referencias ul{
+    padding-left: 30px;
+}
+
+.referencias li{
+    font-size: 21px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* ---------- RODAPÉ ---------- */
+
+footer{
+    background: #002776;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media (max-width: 900px){
+
+    .autores{
+        grid-template-columns: 1fr;
+    }
+
+    h1{
+        font-size: 38px;
+    }
+
+    .autores .card{
+        padding: 25px;
+    }
+
+    .referencias{
+        padding: 25px;
+    }
+
+    .referencias h2{
+        font-size: 32px;
+    }
+
+    .referencias li{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px){
+
+    h1{
+        font-size: 30px;
+    }
+
+    header nav a{
+        width: 100%;
+    }
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes titulo{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

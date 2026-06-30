@@ -135,3 +135,6 @@ header nav a:hover {
     background: rgba(0,0,0,0.1);
     transform: translateY(-2px);
 }
+.texto-intro{
+    color: white;
+}

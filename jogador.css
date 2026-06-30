@@ -1,104 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    background-color: yellow;
+    padding: 10px 0;
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header nav a{
+    text-decoration: none;
+    padding: 10px;
+    width: 200px;
+    color: black;
+    font-family: cursive;
+    position: relative;
+    text-align: center;
+}
+
+header nav a:hover{
+    background: #009739;
+    color: white;
+    transition: .3s;
+}
+
+header nav a:active{
+    top: 2px;
+    left: 2px;
+}
+
+/* ---------- BODY ---------- */
+
+body{
+    background: linear-gradient(135deg, #009739, #25b94d, #f4f4f4);
+    color: #222;
+}
+
+/* ---------- TÍTULO ---------- */
+
 h1{
     background: linear-gradient(to right,#009739,#00852f);
     color: white;
     text-align: center;
     padding: 25px;
-    margin-bottom: 35px;
+    margin: 20px;
     border-radius: 15px;
     font-size: 48px;
     box-shadow: 0 8px 20px rgba(0,0,0,.35);
     text-shadow: 2px 2px 5px black;
-    animation: titulo 1s ease;
-    transition: .4s;
 }
-p{
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* ---------- TEXTO INTRO ---------- */
+
+.texto-intro{
+    color: white;
+    font-size: 22px;
     text-align: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
-body{
-    background: linear-gradient(135deg, #009739, #25b94d, #f4f4f4);
-    color: #222;
-}
+
+/* ---------- GRID ---------- */
+
 .jogadores {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
+/* ---------- CARD ---------- */
+
 .jogador {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    min-height: 260px;
 }
+
+.jogador:hover{
+    transform: translateY(-5px);
+}
+
+/* ---------- IMAGENS (CORRIGIDO) ---------- */
 
 .jogador img {
     width: 100%;
     height: 170px;
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
     display: block;
+    padding: 5px;
+    box-sizing: border-box;
 }
+
+/* correção específica para imagens problemáticas */
+.jogador img[src*="weverton"],
+.jogador img[src*="lh"] {
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+}
+
+/* ---------- NOME ---------- */
 
 .jogador p {
-    margin: 8;
+    margin: 8px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
 }
+
+/* ---------- NEYMAR DESTAQUE ---------- */
+
 .neymar-destaque {
-  background-color: #fff;
-  position: relative;
-  border: 3px solid #FFD700;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-  animation: pulse-glow 2s infinite;
-  z-index: 2;
-  box-sizing: border-box;
-  border-radius: 5px;
-
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    animation: pulse 2s infinite;
+    position: relative;
 }
 
-.neymar-destaque img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    display: block;
-}
+/* TAG CAMISA 10 */
 
 .neymar-destaque::before {
-  content: "⭐ CAMISA 10";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFD700;
-  color: #002776;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 3px 10px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  white-space: nowrap;
-  z-index: 3;
-}
-.neymar-destaque p{
-    text-align: center;
-     margin: 8;
+    content: "⭐ CAMISA 10";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: #002776;
+    font-size: 11px;
     font-weight: bold;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    padding: 3px 10px;
+    border-radius: 12px;
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 215, 0, 1);
-  }
-}
+/* ---------- FOOTER ---------- */
+
 footer{
     background: #002776;
     color: white;
@@ -107,34 +159,14 @@ footer{
     margin-top: 50px;
     font-size: 20px;
 }
-header {
-    background: yellow;
-    padding: 10px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
 
-header nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+/* ---------- ANIMAÇÃO NEYMAR ---------- */
 
-header nav a {
-    text-decoration: none;
-    padding: 10px 20px;
-    width: 200px;
-    text-align: center;
-    color: black;
-    font-family: cursive;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-header nav a:hover {
-    background: rgba(0,0,0,0.1);
-    transform: translateY(-2px);
-}
-.texto-intro{
-    color: white;
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+    }
 }

@@ -1,3 +1,31 @@
+/* ---------- HEADER ---------- */
+
+header{
+    background-color: yellow;
+    padding: 10px 0;
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header nav a{
+    text-decoration: none;
+    padding: 10px;
+    width: 200px;
+    color: black;
+    font-family: cursive;
+    position: relative;
+    text-align: center;
+}
+
+header nav a:active{
+    top: 2px;
+    left: 2px;
+}
+
 /* ---------- AUTORES ---------- */
 
 .autores{

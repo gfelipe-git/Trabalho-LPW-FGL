@@ -1,0 +1,104 @@
+/* ---------- AUTORES ---------- */
+
+.autores{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.autores .card{
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    transition: .4s;
+    animation: subir .8s forwards;
+    opacity: 0;
+}
+
+.autores .card:nth-child(1){
+    animation-delay: .2s;
+}
+
+.autores .card:nth-child(2){
+    animation-delay: .5s;
+}
+
+.autores .card:nth-child(3){
+    animation-delay: .8s;
+}
+
+.autores .card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,.35);
+}
+
+.autores .card h2{
+    color: #009739;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.autores .card p{
+    font-size: 19px;
+    color: #222;
+    margin: 12px 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* ---------- REFERÊNCIAS ---------- */
+
+.referencias{
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    margin-bottom: 60px;
+    animation: subir 1s ease;
+}
+
+.referencias h2{
+    text-align: center;
+    color: #009739;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.referencias ul{
+    padding-left: 30px;
+}
+
+.referencias li{
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media (max-width: 900px){
+
+    .autores{
+        grid-template-columns: 1fr;
+    }
+
+    .autores .card{
+        width: 100%;
+    }
+
+    .referencias{
+        padding: 25px;
+    }
+
+    .referencias h2{
+        font-size: 32px;
+    }
+
+    .referencias li{
+        font-size: 18px;
+    }
+
+}
